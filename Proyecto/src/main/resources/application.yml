@@ -1,0 +1,28 @@
+spring:
+  # Conexion a la base de datos
+  datasource:
+    url: jdbc:mysql://nodesdb1:3306/nodesdb?serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # Configuraciones del JPA
+  jpa:
+    show-sql: true
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    ddl-auto: create-drop
+    generate-ddl: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+    open-in-view: false
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+# Manejo del log en modo trazabilidad para observar el comportamiento de las variables
+logging:
+  level:
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
