@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "1c20a1f8-2ddf-43af-9861-d192158d3373",
+		"name": "ExamenParcial",
+		"description": "# Introduction\nDocumentación de APIs de Gateway, Serie, Movie y Catalog.\n\n# Overview\nAPIs de los siguientes microservicios:\n- Gateway: intercepta las requests de clients, luego las enruta al microservicio que corresponda.\n- Catalog: recibe mediante Feign la información de movie y serie. Lista las movies y series según el catálogo.\n- Movie\n- Serie\n\n# Authentication\nNo todavía.\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Gateway",
+			"item": [
+				{
+					"name": "GetMovieByGender",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies/genre/Terror",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"genre",
+								"Terror"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMovieById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMovieAndSeriesByGender-CatalogAPI",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/catalog/Terror",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"catalog",
+								"Terror"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "GetMoviesByGenre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8097/movies/genre/Terror",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"movies",
+								"genre",
+								"Terror"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostMovie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Esta peli es nueva\",\r\n    \"genre\": \"Terror\",\r\n    \"urlStream\": \"https://www.netflix.com/title/70075480\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8097/movies/salvar",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"movies",
+								"salvar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8097/movies/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8097",
+							"path": [
+								"movies",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Series",
+			"item": [
+				{
+					"name": "GetSeriesByGenre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8083/series/Terror",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"series",
+								"Terror"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PostSerie",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Game of Thrones\",\r\n    \"genre\": \"Terror\",\r\n    \"seasons\": [\r\n            {\r\n            \"id\": 1,\r\n            \"seasonNumber\": 1,\r\n            \"chapters\": [\r\n                    {\r\n                        \"id\": 1,\r\n                        \"name\": \"Winter Is Coming\",\r\n                        \"number\": 1,\r\n                        \"urlStream\": \"http/Winter Is Coming\"\r\n                    },\r\n                    {\r\n                        \"id\": 2,\r\n                        \"name\": \"The Kingsroad\",\r\n                        \"number\": 2,\r\n                        \"urlStream\": \"The Kingsroad\"\r\n                    },\r\n                    {\r\n                        \"id\": 3,\r\n                        \"name\": \"Lord Snow\",\r\n                        \"number\": 3,\r\n                        \"urlStream\": \"http/Lord Snow\"\r\n                    }\r\n                ]\r\n            },\r\n        {\r\n            \"id\": 2,\r\n            \"seasonNumber\": 2,\r\n            \"chapters\": [\r\n                {\r\n                    \"id\": 4,\r\n                    \"name\": \"Cripples, Bastards, and Broken Things\",\r\n                    \"number\": 1,\r\n                    \"urlStream\": \"http/Cripples, Bastards, and Broken Things\"\r\n                },\r\n                {\r\n                    \"id\": 5,\r\n                    \"name\": \"The Wolf and the Lion\",\r\n                    \"number\": 2,\r\n                    \"urlStream\": \"http/The Wolf and the Lion\"\r\n                },\r\n                {\r\n                    \"id\": 6,\r\n                    \"name\": \"A Golden Crown\",\r\n                    \"number\": 3,\r\n                    \"urlStream\": \"http/A Golden Crown\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8083/series/guardar",
+							"host": [
+								"localhost"
+							],
+							"port": "8083",
+							"path": [
+								"series",
+								"guardar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Catalog",
+			"item": [
+				{
+					"name": "GetSeriesByGenre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8099/catalog/Terror",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8099",
+							"path": [
+								"catalog",
+								"Terror"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
