@@ -1,6 +1,6 @@
 ## Name
 
-Shockbyte Interview Scenario
+Node Statistics API
 
 ## Description
 
@@ -32,9 +32,3 @@ docker-compose up
 ```
 
 The app should start after a few seconds.
-
-Use the next line to access mysql database:
-
-```
-mysql -u root -p root
-```
