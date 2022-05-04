@@ -1,6 +1,6 @@
 
 Version in [spanish](#microservicios-espaniol) or [english](#microservice-english)
-### Tech Stack
+## Tech Stack
 <div>
   <img src="https://github.com/get-icon/geticon/raw/master/icons/java.svg" alt="Java" width="21px" height="21px"> JAVA
   <img src="https://github.com/get-icon/geticon/raw/master/icons/spring.svg" alt="Spring" width="21px" height="21px"> SPRING
@@ -56,11 +56,17 @@ Contiene la API relacionada con la visualización de la información de cada cat
 
 Para la arquitectura de microservicios se basa en Spring Cloud que proporciona amplias herramientas de soporte como el balanceador de carga, el registro de servicios, la monitorización y la configuración.
 
+![68747470733a2f2f692e6962622e636f2f4832306d7048392f4172717569746563747572612d4d6963726f736572766963696f2e706e67](https://user-images.githubusercontent.com/37404936/166659076-4b60f538-e1f4-4ef0-8e84-f1e606460182.png)
+
 ## Config
 
 Spring Cloud Config es un servicio de configuración centralizado y escalable horizontalmente para sistemas distribuidos. Utiliza una capa de repositorio que actualmente admite el almacenamiento local y Git.
 
 [Repositorio](https://github.com/stephieandrade/configuration-files-exam) con archivos de configuración para los microservicios.
+
+## Service Discovery
+
+En este proyecto utilizo Netflix Eureka. Eureka es un buen ejemplo del patrón de descubrimiento del lado del cliente, cuando el cliente es responsable de determinar las ubicaciones de las instancias de servicio disponibles (utilizando el servidor de Registro) y el equilibrio de carga de las solicitudes a través de ellos.
 
 <h2 id="microservice-english">
 Microservicios
