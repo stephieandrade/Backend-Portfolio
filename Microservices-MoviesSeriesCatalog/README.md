@@ -1,5 +1,6 @@
 
-## Version in [SPANISH](#microservicios-espaniol) or [ENGLISH](#microservice-english)
+#### Version in [SPANISH](#microservicios-espaniol) or [ENGLISH](#microservice-english)
+#### ✏ Autora/Author: [Ayelén Andrade](https://github.com/stephieandrade)
 
 ## Tech Stack
 <div>
@@ -79,6 +80,31 @@ eureka:
     service-url:
       defaultZone: http://eureka-server:8761/eureka/
 ```
+
+Ahora, al iniciarse la aplicación, se registrará en el servidor Eureka y proporcionará metadatos, como el host y el puerto, la URL del indicador de salud, la página de inicio, etc. Eureka recibe mensajes de heartbeat de cada instancia perteneciente a un servicio y registrando el servicio dentro del servidor.
+
+## Despliegue
+
+Para el despliegue, todo el código fuente será compilado y empaquetado como un jar. Estos archivos jar se utilizarán posteriormente para crear la imagen de cada servicio.
+
+Para la ejecución de cada aplicación será implementado mediante un archivo Dockerfile como por ejemplo
+
+```
+FROM adoptopenjdk/openjdk11:alpine-jre
+ARG JAR_FILE=catalog-service-1.0.0-SNAPSHOT.jar
+COPY target/${JAR_FILE} app.jar
+ENTRYPOINT ["java","-jar","app.jar"]
+```
+
+Para la orquestación y despliegue de todos los servicios mediante los archivos Dockerfile, se utiliza Docker compose y para la ejecución del mismo se utiliza el siguiente comando en la consola
+
+```
+docker compose up -d
+```
+
+## Documentación en Postman
+
+[Link a documentación](https://documenter.getpostman.com/view/20744743/UyrEiFkg)
 
 <h2 id="microservice-english">
 Microservices
