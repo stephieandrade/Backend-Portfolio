@@ -1,5 +1,6 @@
 
-Version in [spanish](#microservicios-espaniol) or [english](#microservice-english)
+## Version in [SPANISH](#microservicios-espaniol) or [ENGLISH](#microservice-english)
+
 ## Tech Stack
 <div>
   <img src="https://github.com/get-icon/geticon/raw/master/icons/java.svg" alt="Java" width="21px" height="21px"> JAVA
@@ -68,6 +69,17 @@ Spring Cloud Config es un servicio de configuración centralizado y escalable ho
 
 En este proyecto utilizo Netflix Eureka. Eureka es un buen ejemplo del patrón de descubrimiento del lado del cliente, cuando el cliente es responsable de determinar las ubicaciones de las instancias de servicio disponibles (utilizando el servidor de Registro) y el equilibrio de carga de las solicitudes a través de ellos.
 
+```
+spring:
+  application:
+    name: movie-service
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka-server:8761/eureka/
+```
+
 <h2 id="microservice-english">
-Microservicios
+Microservices
 </h2>
