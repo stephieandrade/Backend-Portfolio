@@ -1,6 +1,12 @@
-## Name
+#### ✏ Autora/Author: [Ayelén Andrade](https://github.com/stephieandrade)
 
-Node Statistics API
+## Tech Stack
+<div>
+  <img src="https://github.com/get-icon/geticon/raw/master/icons/java.svg" alt="Java" width="21px" height="21px"> JAVA
+  <img src="https://github.com/get-icon/geticon/raw/master/icons/spring.svg" alt="Spring" width="21px" height="21px"> SPRING
+  <img src="https://github.com/get-icon/geticon/blob/master/icons/mysql.svg" width="24px" height="24px" alt="MYSQL"> MYSQL   
+  <img src="https://github.com/get-icon/geticon/raw/master/icons/docker-icon.svg" alt="docker" width="21px" height="21px"> DOCKER  
+</div>
 
 ## Description
 
