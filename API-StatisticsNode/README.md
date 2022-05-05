@@ -12,9 +12,6 @@
 
 Creation of a REST API to handle node statistics. This includes data of System uptime, total RAM (integer: bytes), Allocated RAM, Total Disk and Allocated Disk.
 
-For API documentation enter:
-http://localhost:8085/swagger-ui.html
-
 ## Technologies used
 
 - Java Spring Boot
