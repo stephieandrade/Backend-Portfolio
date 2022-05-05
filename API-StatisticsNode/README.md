@@ -21,11 +21,18 @@ http://localhost:8085/swagger-ui.html
 - Docker
 - MySQL
 
+## Node Microservice
+
 Firstly, I created the model for the table of nodes, and I also built a DTO to transfer the data through the API. On the service, I created the different methods that create, delete, find, update and list the nodes. I used two task schedulers to inject data into the database, and used the findAll() method to only return the nodes that were registered every hour for 24 hours. This way, only recent data is returned by the method.
 
-In the controller process the incoming REST API requests are processed and return response Entities for each method.
+Method | Endpoint | Description
+GET | /node/ |Lists all nodes.
+GET | /node/{ID} |Gets a node according to the ID.
+POST | /node/ |Creates a new node.
+UPDATE | /node/{ID} |Updates a node according to the ID.
+DELETE | /node/{ID} |Deletes a node according to the ID.
 
-Also, some Bad Request Exceptions where added, for example if a node wasn't found in the findById(id) method, or if a node couldn't be deleted.
+## Deployment
 
 Finally, a docker image of the mysql database and one of the spring boot application were created, and a docker-compose.yml file was used to manage both image containers.
 
@@ -34,7 +41,11 @@ Finally, a docker image of the mysql database and one of the spring boot applica
 Download the code in this repository. With command line interface, go to the main project folder destination (called '.../Proyecto') and execute docker compose:
 
 ```
-docker-compose up
+docker-compose up -d
 ```
 
 The app should start after a few seconds.
+
+## Documentation 
+
+[API documentation in Postman](https://documenter.getpostman.com/view/20744743/UyxbqV8m)
