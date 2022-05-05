@@ -45,4 +45,4 @@ The app should start after a few seconds.
 
 ## Documentation 
 
-[API documentation in Postman](https://documenter.getpostman.com/view/20744743/UyxbqV8m)
+[Link to API documentation in Postman](https://documenter.getpostman.com/view/20744743/UyxbqV8m)
