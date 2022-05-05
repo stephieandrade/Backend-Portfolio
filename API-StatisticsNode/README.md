@@ -23,6 +23,7 @@ Creation of a REST API to handle node statistics. This includes data of System u
 Firstly, I created the model for the table of nodes, and I also built a DTO to transfer the data through the API. On the service, I created the different methods that create, delete, find, update and list the nodes. I used two task schedulers to inject data into the database, and used the findAll() method to only return the nodes that were registered every hour for 24 hours. This way, only recent data is returned by the method.
 
 Method | Endpoint | Description
+---|---|---
 GET | /node/ |Lists all nodes.
 GET | /node/{ID} |Gets a node according to the ID.
 POST | /node/ |Creates a new node.
