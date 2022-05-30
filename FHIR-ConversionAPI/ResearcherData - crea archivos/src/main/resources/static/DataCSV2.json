@@ -1,0 +1,88 @@
+[{"conclusion":"Gitelman syndrome",
+  "code":{
+    "coding":[{
+      "system":"http://snomed.info/sct",
+      "display":"Differential Diagnosis"
+    }]
+  },
+  "subject":{
+    "id":"897761"
+  },
+  "specimen":[{
+    "reference":"wgs"}],
+  "implicitRules":"https://www.hl7.org/fhir/diagnosticreport.html",
+  "language":"english",
+  "category":[{
+    "coding":[{
+      "system":"http://snomed.info/sct",
+      "code":"707756004",
+      "display":"Gitelman syndrome"
+    }]
+  }],
+  "issued":"2019-03-12T00:00:00.000+01:00",
+  "resourceType":"DiagnosticReport",
+  "status":"final"
+},
+  {"conclusion":"Not found",
+    "code":{
+      "coding":[{
+        "system":"http://snomed.info/sct",
+        "display":"Differential Diagnosis"
+      }
+      ]},
+    "subject":{"id":"999871"},
+    "specimen":[{"reference":"wgs"}],
+    "implicitRules":"https://www.hl7.org/fhir/diagnosticreport.html",
+    "language":"english",
+    "category":[{
+      "coding":[{
+        "system":"http://snomed.info/sct",
+        "code":"Not found",
+        "display":"Not found"}]
+    }],
+    "issued":"2021-12-01T00:00:00.000+01:00",
+    "resourceType":"DiagnosticReport",
+    "status":"unknown"},
+  {
+    "conclusion":"Congenital nephrotic syndrome",
+    "code":{
+      "coding":[{
+        "system":"http://snomed.info/sct",
+        "display":"Differential Diagnosis"}]},
+    "subject":{"id":"234234"},
+    "specimen":[{
+      "reference":"exome"}],
+    "implicitRules":"https://www.hl7.org/fhir/diagnosticreport.html",
+    "language":"english",
+    "category":[{
+      "coding":[{
+        "system":"http://snomed.info/sct",
+        "code":"48796009",
+        "display":"Congenital nephrotic syndrome"
+      }]
+    }],
+    "issued":"2020-12-03T00:00:00.000+01:00",
+    "resourceType":"DiagnosticReport",
+    "status":"final"
+  },
+  {"conclusion":"Distal renal tubular acidosis",
+    "code":{
+      "coding":[{
+        "system":"http://snomed.info/sct",
+        "display":"Differential Diagnosis"}]},
+    "subject":{
+      "id":"332333"
+    },
+    "specimen":[{
+      "reference":"gene panel"}],
+    "implicitRules":"https://www.hl7.org/fhir/diagnosticreport.html",
+    "language":"english","category":[{
+    "coding":[{
+      "system":"http://snomed.info/sct",
+      "code":"236461000",
+      "display":"Distal renal tubular acidosis"
+    }]}
+  ],
+    "issued":"2021-02-02T00:00:00.000+01:00",
+    "resourceType":"DiagnosticReport",
+    "status":"final"}]
