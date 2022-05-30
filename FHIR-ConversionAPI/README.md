@@ -64,4 +64,51 @@ directory (“../Researcher/”):
 Research\docker compose up
 ``` 
 
+## Architecture Diagram
+![Untitled Diagram (4)](https://user-images.githubusercontent.com/37404936/170983864-203ca460-adbd-4a24-a728-b7dd14320c25.jpg)
 
+The architecture designed follows the Microservice pattern. Spring Cloud
+framework was chosen, with a Config Server to store and serve distributed
+configurations across multiple applications and environments. It uses a repository
+layer that supports VCS (Git) or local storage.
+Netflix Eureka is used for implementation of a registration and discovery service. Each
+service will be registered with the Eureka server and provide metadata such as host
+and port, health indicator URL, home page, etc. Eureka receives heartbeat messages
+from each instance belonging to a service and registering the service within the server.
+Spring Cloud Gateway will be used to build an API to help simplify the communication
+between a client and a service. The API will sit between a requester and a resource
+that’s being requested, where it intercepts, analyzes, and modifies every request. Spring
+Cloud Security can be implemented in this API to control which role each route requires
+a user to have. Spring Boot Actuator can also be implemented, which would allow to
+easily emit metrics of the application performance.
+To explain the architecture in the next picture, there is a series of events that are
+enumerated.
+
+1. The systems 1 and 2 produce JSON or CSV files respectively, and each file can be
+sent in the body of a POST request to the Gateway API, which would redirect it
+to the Queue Service.
+2. The Queue Service will receive the files and set them up in a queue via a message
+broker (RabbitMQ).
+3. The Adapter Service will act as a consumer of this queue, and each request will
+be processed asynchronously. Each file will be converted to a validated FHIR
+Diagnostic Report in JSON format. If an error came up during the conversion of
+the documents, they would be assessed correctly with the corresponding HTTP
+response.
+4. The adapter will generate FHIR JSON files and also set them in a different queue
+in Rabbit MQ.
+5. The database microservice will act as a Consumer and receive those files from
+the respective queue.
+6. The files will be then saved in a mongoDB database.
+Researchers will be able to query the data by sending a request to the Gateway API,
+which will redirect it to the Database Service to retrieve the data needed. For example,
+a GET BY PATIENT ID request will be responded with a list of the resources depending
+on the patient id.
+This architecture can be built with AWS, storing the backend with ECS (Elastic
+Container Service) to deploy, manage and scale containerized applications. Amazon
+DocumentDB can be used for MongoDB
+
+## References
+
+[HL7 Diagnostic Report](https://www.hl7.org/fhir/diagnosticreport.html)
+[FHIR Diagnostic Report](https://hapifhir.io/hapi-fhir/apidocs/hapi-fhirstructures-r4/org/hl7/fhir/r4/model/DiagnosticReport.html)
+[FHIR Validator](https://hapifhir.io/hapifhir/docs/validation/instance_validator.html)
