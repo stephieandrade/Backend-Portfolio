@@ -109,6 +109,6 @@ DocumentDB can be used for MongoDB
 
 ## References
 
-[HL7 Diagnostic Report](https://www.hl7.org/fhir/diagnosticreport.html)
-[FHIR Diagnostic Report](https://hapifhir.io/hapi-fhir/apidocs/hapi-fhirstructures-r4/org/hl7/fhir/r4/model/DiagnosticReport.html)
-[FHIR Validator](https://hapifhir.io/hapifhir/docs/validation/instance_validator.html)
+- [HL7 Diagnostic Report](https://www.hl7.org/fhir/diagnosticreport.html)
+- [FHIR Diagnostic Report](https://hapifhir.io/hapi-fhir/apidocs/hapi-fhirstructures-r4/org/hl7/fhir/r4/model/DiagnosticReport.html)
+- [FHIR Validator](https://hapifhir.io/hapifhir/docs/validation/instance_validator.html)
