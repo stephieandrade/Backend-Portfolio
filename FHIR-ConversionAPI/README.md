@@ -47,7 +47,7 @@ uploaded manually for the API to be tested.
 Deployment
 For deployment, all source code will be compiled and packaged as a jar. These jar files
 will later be used to create the docker image for each service. Docker needs to be
-installed for deployment (Docker Download, n.d.).
+installed for deployment.
 For the execution of each application, it will be deployed using a Dockerfile such as:
 
 ``` 
@@ -59,4 +59,9 @@ ENTRYPOINT ["java","-jar","app.jar"]
 
 The project can be deployed with docker compose using the next command in the root
 directory (“../Researcher/”):
+
+``` 
+Research\docker compose up
+``` 
+
 
